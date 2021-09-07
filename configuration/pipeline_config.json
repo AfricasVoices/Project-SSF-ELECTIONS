@@ -1,11 +1,11 @@
 {
-  "PipelineName": "ssf-elections",
+  "PipelineName": "SSF-elections",
   "RawDataSources": [
     {
       "SourceType": "RapidPro",
       "Domain": "textit.in",
       "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
-      "ContactsFileName": "imaqal_covid19_contacts",
+      "ContactsFileName": "ssf_elections_contacts",
       "ActivationFlowNames": [
         "ssf_elections_s01e01_activation"
       ],
