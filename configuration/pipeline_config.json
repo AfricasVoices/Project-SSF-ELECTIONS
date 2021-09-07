@@ -1,5 +1,5 @@
 {
-  "PipelineName": "IMAQAL_COVID19_s02",
+  "PipelineName": "ssf-elections",
   "RawDataSources": [
     {
       "SourceType": "RapidPro",
@@ -83,12 +83,12 @@
   },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-all-datasets/production.csv",
-    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-all-datasets/messages.csv",
-    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-all-datasets/individuals.csv",
-    "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/s02/vaccine-all-datasets/automated_analysis"
+    "ProductionUploadPath": "ssf_elections_analysis_outputs/production.csv",
+    "MessagesUploadPath": "ssf_elections_analysis_outputs/messages.csv",
+    "IndividualsUploadPath": "ssf_elections_analysis_outputs/individuals.csv",
+    "AutomatedAnalysisDir": "ssf_elections_analysis_outputs/automated_analysis"
   },
   "MemoryProfileUploadBucket":"gs://avf-pipeline-logs-performance-nearline",
   "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",
-  "BucketDirPath": "2021/IMAQAL_COVID19/"
+  "BucketDirPath": "2021/SSF-ELECTIONS/"
 }
