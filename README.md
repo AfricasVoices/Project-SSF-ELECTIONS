@@ -1,4 +1,6 @@
 # Project-SSF-ELECTIONS
+Elections Conflict Hotspots Peace Messaging
+
 Data pipeline for project SSF-ELECTIONS.
 
 This pipeline fetches all project data from a Rapid Pro instance and Coda, and processes it to produce data for
