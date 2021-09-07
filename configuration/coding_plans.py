@@ -27,7 +27,11 @@ def clean_district_if_no_mogadishu_sub_district(text):
         return Codes.NOT_CODED
 
 
-RQA_CODING_PLAN = [
+
+
+
+def get_rqa_coding_plans(pipeline_name):
+        return  [
 
     CodingPlan(raw_field="rqa_elections_s01e01_raw",
                time_field="sent_on",
@@ -141,10 +145,6 @@ RQA_CODING_PLAN = [
                ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e07"),
                raw_field_fold_strategy=FoldStrategies.concatenate),
 ]
-
-
-def get_rqa_coding_plans(pipeline_name):
-        return  RQA_CODING_PLAN
 
 
 def get_demog_coding_plans(pipeline_name):
@@ -273,6 +273,11 @@ def get_demog_coding_plans(pipeline_name):
 
 def get_follow_up_coding_plans(pipeline_name):
     return []
+
+
+def get_engagement_coding_plans(pipeline_name):
+    return []
+
 
 def get_ws_correct_dataset_scheme(pipeline_name):
     return CodeSchemes.WS_CORRECT_DATASET_SCHEME
