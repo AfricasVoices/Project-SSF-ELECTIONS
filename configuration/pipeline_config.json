@@ -36,7 +36,7 @@
   },
   "TimestampRemappings": [
   ],
-  "RapidProKeyRemappings": [
+  "SourceKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
 
     {"RapidProKey": "Rqa_Elections_S01E01 (Text) - ssf_elections_s01e01_activation", "PipelineKey": "rqa_elections_s01e01_raw", "IsActivationMessage": true},
