@@ -27,9 +27,6 @@ def clean_district_if_no_mogadishu_sub_district(text):
         return Codes.NOT_CODED
 
 
-
-
-
 def get_rqa_coding_plans(pipeline_name):
         return  [
 
@@ -43,6 +40,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E01,
                        coded_field="rqa_elections_s01e01_coded",
+                       analysis_file_key="rqa_s01e01",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
                    )
                ],
@@ -59,6 +57,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E02,
                        coded_field="rqa_elections_s01e02_coded",
+                       analysis_file_key="rqa_s01e02",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E02, x, y)
                    )
                ],
@@ -75,6 +74,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E03,
                        coded_field="rqa_elections_s01e03_coded",
+                       analysis_file_key="rqa_s01e03",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E03, x, y)
                    )
                ],
@@ -91,6 +91,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E04,
                        coded_field="rqa_elections_s01e04_coded",
+                       analysis_file_key="rqa_s01e04",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E04, x, y)
                    )
                ],
@@ -107,6 +108,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E05,
                        coded_field="rqa_elections_s01e05_coded",
+                       analysis_file_key="rqa_s01e05",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E05, x, y)
                    )
                ],
@@ -123,6 +125,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E06,
                        coded_field="rqa_elections_s01e06_coded",
+                       analysis_file_key="rqa_s01e06",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E06, x, y)
                    )
                ],
@@ -139,6 +142,7 @@ def get_rqa_coding_plans(pipeline_name):
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S01E07,
                        coded_field="rqa_elections_s01e07_coded",
+                       analysis_file_key="rqa_s01e07",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E07, x, y)
                    )
                ],
