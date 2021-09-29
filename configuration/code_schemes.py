@@ -32,3 +32,6 @@ class CodeSchemes(object):
     SOMALIA_ZONE = _open_scheme("somalia_zone.json")
 
     WS_CORRECT_DATASET_SCHEME = _open_scheme("ws_correct_dataset.json")
+
+    FACEBOOK_COMMENT_REPLY_TO = _open_scheme("facebook_comment_reply_to.json")
+    FACEBOOK_POST_TYPE = _open_scheme("facebook_post_type.json")
