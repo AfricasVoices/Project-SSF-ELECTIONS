@@ -23,6 +23,7 @@
     {
       "SourceType": "RecoveryCSV",
       "ActivationFlowURLs": [
+        "gs://avf-project-datasets/2021/SSF-ELECTIONS/2021_SSF_ELECTIONS_recovered_golis_s01e01_de_identified.csv"
       ]
     }
   ],
@@ -35,6 +36,12 @@
     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json"
   },
   "TimestampRemappings": [
+    {
+      "TimeKey": "received_on",
+      "ShowPipelineKeyToRemapTo": "rqa_s01e01_raw",
+      "RangeStartInclusive": "2021-09-14T00:00:00+03:00",
+      "RangeEndExclusive": "2021-09-17T24:00:00+03:00"
+    }
   ],
   "SourceKeyRemappings": [
     {"SourceKey": "avf_phone_id", "PipelineKey": "uid"},
@@ -66,6 +73,10 @@
     {"SourceKey": "Rqa_Elections_S01E07 (Text) - ssf_elections_s01e07_activation", "PipelineKey": "rqa_elections_s01e07_raw", "IsActivationMessage": true},
     {"SourceKey": "Rqa_Elections_S01E07 (Run ID) - ssf_elections_s01e07_activation", "PipelineKey": "rqa_elections_s01e07_run_id"},
     {"SourceKey": "Rqa_Elections_S01E07 (Time) - ssf_elections_s01e07_activation", "PipelineKey": "sent_on"},
+
+    {"SourceKey": "message", "PipelineKey": "recovered_raw", "IsActivationMessage": true},
+    {"SourceKey": "received_on", "PipelineKey": "sent_on"},
+    {"SourceKey": "run_id", "PipelineKey": "recovered_run_id"},
 
     {"SourceKey": "Gender (Value) - imaqal_demog", "PipelineKey": "gender_raw"},
     {"SourceKey": "Gender (Time) - imaqal_demog", "PipelineKey": "gender_time"},
