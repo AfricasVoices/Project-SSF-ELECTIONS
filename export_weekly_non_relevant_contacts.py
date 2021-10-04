@@ -16,8 +16,8 @@ from src.lib import PipelineConfiguration
 log = Logger(__name__)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generates lists of phone numbers to who sent non ranast meadvertise to using project "
-                                                 "traced data and KK exclusion lists")
+    parser = argparse.ArgumentParser(description="Generates lists of phone numbers who sent `non relevant messages` in the"
+                                                 " past week from traced data so that we can resend them tailored advert")
 
     parser.add_argument("--exclusion-list-file-path", nargs="?",
                         help="List of phone numbers to exclude from the ad group")
@@ -81,7 +81,7 @@ if __name__ == "__main__":
             # Check for contacts who have only sent messages labeled as showtime_question", "greeting", "opt_in", "NC"
             # in the target episodes. We will send a tailored follow up sms with the target episode question
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
-                if plan.dataset_name in target_dataset_name:
+                if plan.dataset_name == target_dataset_name:
                     for cc in plan.coding_configurations:
                         codes = analysis_utils.get_codes_from_td(td, AnalysisConfiguration(plan.dataset_name,
                                                                                            plan.raw_field,
