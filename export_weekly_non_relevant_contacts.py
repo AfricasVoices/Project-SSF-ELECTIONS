@@ -4,7 +4,6 @@ import json
 import sys
 
 from core_data_modules.analysis import analysis_utils, AnalysisConfiguration
-from core_data_modules.data_models import CodeTypes
 from core_data_modules.cleaners import Codes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
@@ -74,7 +73,6 @@ if __name__ == "__main__":
         log.info(f"Loaded {len(data)} traced data objects")
 
         for td in data:
-            has_relevant_message = False
             if td["consent_withdrawn"] == Codes.TRUE:
                 continue
 
@@ -83,15 +81,15 @@ if __name__ == "__main__":
             for plan in PipelineConfiguration.RQA_CODING_PLANS:
                 if plan.dataset_name == target_dataset_name:
                     for cc in plan.coding_configurations:
-                        codes = analysis_utils.get_codes_from_td(td, AnalysisConfiguration(plan.dataset_name,
-                                                                                           plan.raw_field,
-                                                                                           cc.coded_field,
-                                                                                           cc.code_scheme))
-                        for code in codes:
-                            if code.code_type == CodeTypes.NORMAL:
-                                has_relevant_message = True
 
-                        if not has_relevant_message:
+                        analysis_configurations = AnalysisConfiguration(plan.dataset_name,
+                                                                        plan.raw_field,
+                                                                        cc.coded_field,
+                                                                        cc.code_scheme)
+
+                        codes = analysis_utils.get_codes_from_td(td, analysis_configurations)
+
+                        if not analysis_utils.relevant(td, "consent_withdrawn", analysis_configurations):
                             for code in codes:
                                 if code.string_value in ["showtime_question", "greeting", "opt_in", "NC"]:
                                     uuids.add(td["uid"])
