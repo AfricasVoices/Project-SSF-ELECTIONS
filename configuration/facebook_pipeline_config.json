@@ -41,7 +41,6 @@
     "GenerateDistrictThemeDistributionMaps": false,
     "GenerateMogadishuThemeDistributionMaps": false
   },
-  "DriveUpload": {
     "DriveUpload": {
       "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
       "ProductionUploadPath": "ssf_elections_analysis_outputs/facebook_production.csv",
@@ -52,5 +51,4 @@
     "MemoryProfileUploadBucket": "gs://avf-pipeline-logs-performance-nearline",
     "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",
     "BucketDirPath": "2021/SSF-ELECTIONS/"
-  }
 }
