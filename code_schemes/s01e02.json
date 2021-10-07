@@ -3,7 +3,62 @@
   "Name": "RQA S01E02",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-8cdc7423",
+      "CodeType": "Normal",
+      "DisplayText": "building trust",
+      "NumericValue": 1,
+      "StringValue": "building_trust",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d288b4bc",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 2,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f9fa5d85",
+      "CodeType": "Normal",
+      "DisplayText": "fairness",
+      "NumericValue": 3,
+      "StringValue": "fairness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-aa9a1fde",
+      "CodeType": "Normal",
+      "DisplayText": "peace and security",
+      "NumericValue": 4,
+      "StringValue": "peace_and_security",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d7ff8983",
+      "CodeType": "Normal",
+      "DisplayText": "abolish 4.5 system",
+      "NumericValue": 5,
+      "StringValue": "abolish_4_5_system",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a06185b9",
+      "CodeType": "Normal",
+      "DisplayText": "unity & cooperation",
+      "NumericValue": 6,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-0b95daac",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
