@@ -23,6 +23,14 @@ DATASETS=(
     "SSF_ELECTIONS_s01e06"
     "SSF_ELECTIONS_s01e07"
 
+    "SSF_ELECTIONS_facebook_s01e01"
+    "SSF_ELECTIONS_facebook_s01e02"
+    "SSF_ELECTIONS_facebook_s01e03"
+    "SSF_ELECTIONS_facebook_s01e04"
+    "SSF_ELECTIONS_facebook_s01e05"
+    "SSF_ELECTIONS_facebook_s01e06"
+    "SSF_ELECTIONS_facebook_s01e07"
+
     "IMAQAL_gender"
     "IMAQAL_location"
     "IMAQAL_age"
