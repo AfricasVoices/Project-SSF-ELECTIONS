@@ -32,3 +32,15 @@ class CodeSchemes(object):
     SOMALIA_ZONE = _open_scheme("somalia_zone.json")
 
     WS_CORRECT_DATASET_SCHEME = _open_scheme("ws_correct_dataset.json")
+
+    FACEBOOK_S01E01 = _open_scheme("facebook_s01e01.json")
+    FACEBOOK_S01E02 = _open_scheme("facebook_s01e02.json")
+    FACEBOOK_S01E03 = _open_scheme("facebook_s01e03.json")
+    FACEBOOK_S01E04 = _open_scheme("facebook_s01e04.json")
+    FACEBOOK_S01E05 = _open_scheme("facebook_s01e05.json")
+    FACEBOOK_S01E06 = _open_scheme("facebook_s01e06.json")
+    FACEBOOK_S01E07 = _open_scheme("facebook_s01e07.json")
+
+
+    FACEBOOK_COMMENT_REPLY_TO = _open_scheme("facebook_comment_reply_to.json")
+    FACEBOOK_POST_TYPE = _open_scheme("facebook_post_type.json")

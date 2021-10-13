@@ -1,0 +1,60 @@
+{
+  "PipelineName": "ssf_elections_facebook",
+  "RawDataSources": [
+    {
+      "SourceType": "Facebook",
+      "PageID": "AbdirizakHAtosh",
+      "TokenFileURL": "gs://avf-credentials/AbdirizakHAtosh-facebook-token.txt",
+      "Datasets": [
+        {"Name": "facebook_s01e01", "Search": {
+          "Match": "#doorashoNabadeed", "StartDate": "2021-09-22T00:00+03:00", "EndDate": "2021-09-24T00:00+03:00"
+        }},
+        {"Name": "facebook_s01e02", "Search": {
+          "Match": "#doorashoNabadeed", "StartDate": "2021-09-24T00:00+03:00", "EndDate": "2021-09-26T00:00+03:00"
+        }}
+      ]
+    }
+  ],
+  "UuidTable": {
+     "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
+     "TableName": "SSF_ELECTIONS_facebook_avf_facebook_id",
+     "UuidPrefix": "avf-facebook-uuid-"
+  },
+  "OperationsDashboard": {
+    "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-dashboards-firebase-adminsdk-gvecb-ef772e79b6.json"
+  },
+  "SourceKeyRemappings": [
+    {"SourceKey": "avf_facebook_id", "PipelineKey": "uid"},
+
+    {"SourceKey": "facebook_s01e01.message", "PipelineKey": "facebook_s01e01_raw"},
+    {"SourceKey": "facebook_s01e01.id", "PipelineKey": "facebook_s01e01_comment_id"},
+    {"SourceKey": "facebook_s01e01.created_time", "PipelineKey": "sent_on"},
+    {"SourceKey": "facebook_s01e01.parent", "PipelineKey": "facebook_s01e01_comment_reply_to_raw"},
+    {"SourceKey": "facebook_s01e01.post", "PipelineKey": "facebook_s01e01_post_raw"},
+
+    {"SourceKey": "facebook_s01e02.message", "PipelineKey": "facebook_s01e02_raw"},
+    {"SourceKey": "facebook_s01e02.id", "PipelineKey": "facebook_s01e02_comment_id"},
+    {"SourceKey": "facebook_s01e02.created_time", "PipelineKey": "sent_on"},
+    {"SourceKey": "facebook_s01e02.parent", "PipelineKey": "facebook_s01e02_comment_reply_to_raw"},
+    {"SourceKey": "facebook_s01e02.post", "PipelineKey": "facebook_s01e02_post_raw"}
+  ],
+  "ProjectStartDate": "2021-09-22T00:00+03:00",
+  "ProjectEndDate": "2100-01-01T00:00:00+03:00",
+  "FilterTestMessages": false,
+  "MoveWSMessages": false,
+  "AutomatedAnalysis": {
+    "GenerateRegionThemeDistributionMaps": false,
+    "GenerateDistrictThemeDistributionMaps": false,
+    "GenerateMogadishuThemeDistributionMaps": false
+  },
+    "DriveUpload": {
+      "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
+      "ProductionUploadPath": "ssf_elections_analysis_outputs/facebook_production.csv",
+      "MessagesUploadPath": "ssf_elections_analysis_outputs/facebook_messages.csv",
+      "IndividualsUploadPath": "ssf_elections_analysis_outputs/facebook_individuals.csv",
+      "AutomatedAnalysisDir": "ssf_elections_analysis_outputs/facebook_automated_analysis"
+    },
+    "MemoryProfileUploadBucket": "gs://avf-pipeline-logs-performance-nearline",
+    "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",
+    "BucketDirPath": "2021/SSF-ELECTIONS/"
+}

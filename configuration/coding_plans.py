@@ -1,5 +1,8 @@
 from core_data_modules.cleaners import somali, swahili, Codes
 from core_data_modules.traced_data.util.fold_traced_data import FoldStrategies
+from core_data_modules.util import SHAUtils, TimeUtils
+from social_media_tools.facebook import facebook_utils
+
 
 from configuration import code_imputation_functions
 from configuration.code_schemes import CodeSchemes
@@ -26,139 +29,196 @@ def clean_district_if_no_mogadishu_sub_district(text):
     else:
         return Codes.NOT_CODED
 
+def _make_facebook_coding_plan(name, code_scheme):
+    return \
+        CodingPlan(dataset_name=f"facebook_{name}",
+                   raw_field=f"facebook_{name}_raw",
+                   time_field="sent_on",
+                   run_id_field=f"facebook_{name}_run_id",
+                   coda_filename=f"SSF_ELECTIONS_facebook_{name}.json",
+                   message_id_fn=lambda td: SHAUtils.sha_string(td[f"facebook_{name}_comment_id"]),
+                   icr_filename=f"facebook_{name}.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=code_scheme,
+                           coded_field=f"facebook_{name}_coded",
+                           analysis_file_key=f"facebook_{name}",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(code_scheme, x, y)
+                       ),
+                       CodingConfiguration(
+                           raw_field=f"facebook_{name}_comment_reply_to_raw",
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.FACEBOOK_COMMENT_REPLY_TO,
+                           cleaner=lambda parent: "post" if parent == {} else "comment",
+                           coded_field=f"facebook_{name}_comment_reply_to_coded",
+                           requires_manual_verification=False,
+                           analysis_file_key=f"facebook_{name}_comment_reply_to",
+                           fold_strategy=None,
+                           include_in_individuals_file=False
+                       ),
+                       CodingConfiguration(
+                           raw_field=f"facebook_{name}_post_raw",
+                           coding_mode=CodingModes.SINGLE,
+                           code_scheme=CodeSchemes.FACEBOOK_POST_TYPE,
+                           cleaner=facebook_utils.clean_post_type,
+                           coded_field=f"facebook_{name}_post_type_coded",
+                           requires_manual_verification=False,
+                           analysis_file_key=f"facebook_{name}_post_type",
+                           fold_strategy=None,
+                           include_in_individuals_file=False
+                       )
+                   ],
+                   raw_field_fold_strategy=FoldStrategies.concatenate)
 
 def get_rqa_coding_plans(pipeline_name):
+    if pipeline_name == "ssf-elections":
         return  [
+            CodingPlan(dataset_name="elections_s01e01",
+                       raw_field="rqa_elections_s01e01_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e01_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e01.json",
+                       icr_filename="ssf_elections_s01e01.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E01,
+                               coded_field="rqa_elections_s01e01_coded",
+                               analysis_file_key="rqa_s01e01",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e01"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e01",
-               raw_field="rqa_elections_s01e01_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e01_run_id",
-               coda_filename="SSF_ELECTIONS_s01e01.json",
-               icr_filename="ssf_elections_s01e01.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E01,
-                       coded_field="rqa_elections_s01e01_coded",
-                       analysis_file_key="rqa_s01e01",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e01"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e02",
+                       raw_field="rqa_elections_s01e02_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e02_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e02.json",
+                       icr_filename="ssf_elections_s01e02.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E02,
+                               coded_field="rqa_elections_s01e02_coded",
+                               analysis_file_key="rqa_s01e02",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E02, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e02"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e02",
-               raw_field="rqa_elections_s01e02_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e02_run_id",
-               coda_filename="SSF_ELECTIONS_s01e02.json",
-               icr_filename="ssf_elections_s01e02.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E02,
-                       coded_field="rqa_elections_s01e02_coded",
-                       analysis_file_key="rqa_s01e02",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E02, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e02"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e03",
+                       raw_field="rqa_elections_s01e03_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e03_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e03.json",
+                       icr_filename="ssf_elections_s01e03.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E03,
+                               coded_field="rqa_elections_s01e03_coded",
+                               analysis_file_key="rqa_s01e03",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E03, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e03"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e03",
-               raw_field="rqa_elections_s01e03_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e03_run_id",
-               coda_filename="SSF_ELECTIONS_s01e03.json",
-               icr_filename="ssf_elections_s01e03.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E03,
-                       coded_field="rqa_elections_s01e03_coded",
-                       analysis_file_key="rqa_s01e03",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E03, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e03"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e04",
+                       raw_field="rqa_elections_s01e04_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e04_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e04.json",
+                       icr_filename="ssf_elections_s01e04.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E04,
+                               coded_field="rqa_elections_s01e04_coded",
+                               analysis_file_key="rqa_s01e04",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E04, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e04"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e04",
-               raw_field="rqa_elections_s01e04_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e04_run_id",
-               coda_filename="SSF_ELECTIONS_s01e04.json",
-               icr_filename="ssf_elections_s01e04.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E04,
-                       coded_field="rqa_elections_s01e04_coded",
-                       analysis_file_key="rqa_s01e04",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E04, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e04"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e05",
+                       raw_field="rqa_elections_s01e05_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e05_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e05.json",
+                       icr_filename="ssf_elections_s01e05.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E05,
+                               coded_field="rqa_elections_s01e05_coded",
+                               analysis_file_key="rqa_s01e05",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E05, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e05"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e05",
-               raw_field="rqa_elections_s01e05_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e05_run_id",
-               coda_filename="SSF_ELECTIONS_s01e05.json",
-               icr_filename="ssf_elections_s01e05.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E05,
-                       coded_field="rqa_elections_s01e05_coded",
-                       analysis_file_key="rqa_s01e05",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E05, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e05"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e06",
+                       raw_field="rqa_elections_s01e06_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e06_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e06.json",
+                       icr_filename="ssf_elections_s01e06.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E06,
+                               coded_field="rqa_elections_s01e06_coded",
+                               analysis_file_key="rqa_s01e06",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E06, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e06"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(dataset_name="elections_s01e06",
-               raw_field="rqa_elections_s01e06_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e06_run_id",
-               coda_filename="SSF_ELECTIONS_s01e06.json",
-               icr_filename="ssf_elections_s01e06.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E06,
-                       coded_field="rqa_elections_s01e06_coded",
-                       analysis_file_key="rqa_s01e06",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E06, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e06"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
+            CodingPlan(dataset_name="elections_s01e07",
+                       raw_field="rqa_elections_s01e07_raw",
+                       time_field="sent_on",
+                       run_id_field="rqa_elections_s01e07_run_id",
+                       coda_filename="SSF_ELECTIONS_s01e07.json",
+                       icr_filename="ssf_elections_s01e07.csv",
+                       coding_configurations=[
+                           CodingConfiguration(
+                               coding_mode=CodingModes.MULTIPLE,
+                               code_scheme=CodeSchemes.S01E07,
+                               coded_field="rqa_elections_s01e07_coded",
+                               analysis_file_key="rqa_s01e07",
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E07, x, y)
+                           )
+                       ],
+                       ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e07"),
+                       raw_field_fold_strategy=FoldStrategies.concatenate),
+            ]
+    else:
+        assert pipeline_name == "ssf_elections_facebook"
+        return [
+            _make_facebook_coding_plan("s01e01", CodeSchemes.FACEBOOK_S01E01),
+            _make_facebook_coding_plan("s01e02", CodeSchemes.FACEBOOK_S01E02),
+            _make_facebook_coding_plan("s01e03", CodeSchemes.FACEBOOK_S01E03),
+            _make_facebook_coding_plan("s01e04", CodeSchemes.FACEBOOK_S01E04),
+            _make_facebook_coding_plan("s01e05", CodeSchemes.FACEBOOK_S01E05),
+            _make_facebook_coding_plan("s01e06", CodeSchemes.FACEBOOK_S01E06),
+            _make_facebook_coding_plan("s01e07", CodeSchemes.FACEBOOK_S01E07)
+        ]
 
-    CodingPlan(dataset_name="elections_s01e07",
-               raw_field="rqa_elections_s01e07_raw",
-               time_field="sent_on",
-               run_id_field="rqa_elections_s01e07_run_id",
-               coda_filename="SSF_ELECTIONS_s01e07.json",
-               icr_filename="ssf_elections_s01e07.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S01E07,
-                       coded_field="rqa_elections_s01e07_coded",
-                       analysis_file_key="rqa_s01e07",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E07, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("ssf elections s01e07"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
-]
 
 
 def get_demog_coding_plans(pipeline_name):
+    if pipeline_name == "ssf_elections_facebook":
+        return []
+    else:
+        assert pipeline_name == "ssf-elections"
     return [
         CodingPlan(raw_field="gender_raw",
                    time_field="gender_time",
@@ -292,3 +352,5 @@ def get_engagement_coding_plans(pipeline_name):
 
 def get_ws_correct_dataset_scheme(pipeline_name):
     return CodeSchemes.WS_CORRECT_DATASET_SCHEME
+
+
