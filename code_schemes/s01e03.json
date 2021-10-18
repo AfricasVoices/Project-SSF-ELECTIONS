@@ -3,7 +3,62 @@
   "Name": "RQA S01E03",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-dc91cbb9",
+      "CodeType": "Normal",
+      "DisplayText": "cooperate with security agents",
+      "NumericValue": 1,
+      "StringValue": "cooperate_with_security_agents",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a9fdf96f",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cohesion",
+      "NumericValue": 2,
+      "StringValue": "unity_and_cohesion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-06013f8f",
+      "CodeType": "Normal",
+      "DisplayText": "create awareness",
+      "NumericValue": 3,
+      "StringValue": "create_awareness",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a72be4c6",
+      "CodeType": "Normal",
+      "DisplayText": "involve them in the election process",
+      "NumericValue": 4,
+      "StringValue": "involve_them_in_the_election_process",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-055daff0",
+      "CodeType": "Normal",
+      "DisplayText": "job creation",
+      "NumericValue": 5,
+      "StringValue": "job_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-dd35e841",
+      "CodeType": "Normal",
+      "DisplayText": "stop clannism",
+      "NumericValue": 6,
+      "StringValue": "stop_clannism",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-a6f73d2d",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
