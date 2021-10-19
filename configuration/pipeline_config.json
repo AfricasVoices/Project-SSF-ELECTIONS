@@ -42,13 +42,13 @@
   "TimestampRemappings": [
     {
       "TimeKey": "received_on",
-      "ShowPipelineKeyToRemapTo": "rqa_s01e01_raw",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e01_raw",
       "RangeStartInclusive": "2021-09-22T08:00+03:00",
       "RangeEndExclusive": "2021-09-28T08:00+03:00"
     },
     {
       "TimeKey": "received_on",
-      "ShowPipelineKeyToRemapTo": "rqa_s01e02_raw",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e01_raw",
       "RangeStartInclusive": "2021-09-28T08:00+03:00",
       "RangeEndExclusive": "2021-09-30T24:00+03:00"
     }
