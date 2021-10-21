@@ -3,7 +3,70 @@
   "Name": "RQA S01E04",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-75d529d7",
+      "CodeType": "Normal",
+      "DisplayText": "justice and equality",
+      "NumericValue": 1,
+      "StringValue": "justice_and_equality",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-9db51725",
+      "CodeType": "Normal",
+      "DisplayText": "peace and security",
+      "NumericValue": 2,
+      "StringValue": "peace_and_security",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1dc42dae",
+      "CodeType": "Normal",
+      "DisplayText": "religion",
+      "NumericValue": 3,
+      "StringValue": "religion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-3445f13f",
+      "CodeType": "Normal",
+      "DisplayText": "eliminating clannism",
+      "NumericValue": 4,
+      "StringValue": "eliminating_clannism",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-6e8064ab",
+      "CodeType": "Normal",
+      "DisplayText": "cooperation and cohesion",
+      "NumericValue": 5,
+      "StringValue": "cooperation_and_cohesion",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-1d24502a",
+      "CodeType": "Normal",
+      "DisplayText": "building trust",
+      "NumericValue": 6,
+      "StringValue": "building_trust",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b15fa927",
+      "CodeType": "Normal",
+      "DisplayText": "avoiding corruption",
+      "NumericValue": 7,
+      "StringValue": "avoiding_corruption",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-421bc6d4",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 8,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
