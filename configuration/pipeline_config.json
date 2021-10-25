@@ -10,7 +10,10 @@
         "ssf_elections_s01e01_activation",
         "ssf_elections_s01e02_activation",
         "ssf_elections_s01e03_activation",
-        "ssf_elections_s01e04_activation"
+        "ssf_elections_s01e04_activation",
+        "ssf_elections_s01e05_activation",
+        "ssf_elections_s01e06_activation",
+        "ssf_elections_s01e07_activation"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
