@@ -10,7 +10,10 @@
         "ssf_elections_s01e01_activation",
         "ssf_elections_s01e02_activation",
         "ssf_elections_s01e03_activation",
-        "ssf_elections_s01e04_activation"
+        "ssf_elections_s01e04_activation",
+        "ssf_elections_s01e05_activation",
+        "ssf_elections_s01e06_activation",
+        "ssf_elections_s01e07_activation"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
@@ -136,8 +139,28 @@
 
       {"StartDate": "2021-09-28T08:00+03:00", "EndDate": "2021-09-30T24:00+03:00", "Label": "E02 Promo"},
       {"StartDate": "2021-09-30T24:00+03:00", "EndDate": "2021-10-03T16:30+03:00", "Label": "E02 Radio"},
-      {"StartDate": "2021-10-03T16:30+03:00", "EndDate": "2021-10-05T08:30+03:00", "Label": "E02 Sms Ad"}
-      ]
+      {"StartDate": "2021-10-03T16:30+03:00", "EndDate": "2021-10-05T08:30+03:00", "Label": "E02 Sms Ad"},
+
+      {"StartDate": "2021-10-06T08:00+03:00", "EndDate": "2021-10-07T24:00+03:00", "Label": "E03 Promo"},
+      {"StartDate": "2021-10-07T24:00+03:00", "EndDate": "2021-10-10T16:30+03:00", "Label": "E03 Radio"},
+      {"StartDate": "2021-10-10T16:30+03:00", "EndDate": "2021-10-13T08:00+03:00", "Label": "E03 Sms Ad"},
+
+      {"StartDate": "2021-10-13T08:00+03:00", "EndDate": "2021-10-14T24:00+03:00", "Label": "E04 Promo"},
+      {"StartDate": "2021-10-14T24:00+03:00", "EndDate": "2021-10-17T16:30+03:00", "Label": "E04 Radio"},
+      {"StartDate": "2021-10-17T16:30+03:00", "EndDate": "2021-10-20T08:00+03:00", "Label": "E04 Sms Ad"},
+
+      {"StartDate": "2021-10-20T08:00+03:00", "EndDate": "2021-10-21T24:00+03:00", "Label": "E05 Promo"},
+      {"StartDate": "2021-10-21T24:00+03:00", "EndDate": "2021-10-24T16:30+03:00", "Label": "E05 Radio"},
+      {"StartDate": "2021-10-24T16:30+03:00", "EndDate": "2021-10-27T08:00+03:00", "Label": "E05 Sms Ad"},
+
+      {"StartDate": "2021-10-27T08:00+03:00", "EndDate": "2021-09-28T24:00+03:00", "Label": "E06 Promo"},
+      {"StartDate": "2021-10-28T24:00+03:00", "EndDate": "2021-10-31T16:30+03:00", "Label": "E06 Radio"},
+      {"StartDate": "2021-10-31T16:30+03:00", "EndDate": "2021-11-03T08:00+03:00", "Label": "E06 Sms Ad"},
+
+      {"StartDate": "2021-11-03T08:00+03:00", "EndDate": "2021-11-04T24:00+03:00", "Label": "E07 Promo"},
+      {"StartDate": "2021-11-04T24:00+03:00", "EndDate": "2021-11-07T16:30+03:00", "Label": "E07 Radio"},
+      {"StartDate": "2021-11-07T16:30+03:00", "EndDate": "2021-11-10T08:00+03:00", "Label": "E07 Sms Ad"}
+    ]
   },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
