@@ -3,7 +3,62 @@
   "Name": "RQA S01E05",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-ed57d5a8",
+      "CodeType": "Normal",
+      "DisplayText": "ensure peace and security",
+      "NumericValue": 1,
+      "StringValue": "ensure_peace_and_security",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-e6515464",
+      "CodeType": "Normal",
+      "DisplayText": "free and fair elections",
+      "NumericValue": 2,
+      "StringValue": "free_and_fair_elections",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-c4e64a75",
+      "CodeType": "Normal",
+      "DisplayText": "unity and cooperation",
+      "NumericValue": 3,
+      "StringValue": "unity_and_cooperation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-898f804f",
+      "CodeType": "Normal",
+      "DisplayText": "stop clannism",
+      "NumericValue": 4,
+      "StringValue": "stop_clannism",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-f57696e1",
+      "CodeType": "Normal",
+      "DisplayText": "avoiding corruption",
+      "NumericValue": 5,
+      "StringValue": "avoiding_corruption",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-d7951003",
+      "CodeType": "Normal",
+      "DisplayText": "better achievement",
+      "NumericValue": 6,
+      "StringValue": "better_achievement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-eddbf1ee",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
