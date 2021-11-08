@@ -31,7 +31,7 @@
       "ActivationFlowURLs": [
         "gs://avf-project-datasets/2021/SSF-ELECTIONS/2021_SSF_ELECTIONS_recovered_golis_s01e01_de_identified.csv",
         "gs://avf-project-datasets/2021/SSF-ELECTIONS/elections_recovered_hormuud_september_de_identified.csv",
-        "gs://avf-project-datasets/2021/SSF-ELECTIONS/elections_recovered_hormuud_september_de_identified.csv"
+        "gs://avf-project-datasets/2021/SSF-ELECTIONS/elections_recovered_hormuud_october_de_identified.csv"
       ]
     }
   ],
