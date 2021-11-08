@@ -30,6 +30,7 @@
       "SourceType": "RecoveryCSV",
       "ActivationFlowURLs": [
         "gs://avf-project-datasets/2021/SSF-ELECTIONS/2021_SSF_ELECTIONS_recovered_golis_s01e01_de_identified.csv",
+        "gs://avf-project-datasets/2021/SSF-ELECTIONS/elections_recovered_hormuud_september_de_identified.csv",
         "gs://avf-project-datasets/2021/SSF-ELECTIONS/elections_recovered_hormuud_september_de_identified.csv"
       ]
     }
@@ -54,6 +55,30 @@
       "ShowPipelineKeyToRemapTo": "rqa_elections_s01e02_raw",
       "RangeStartInclusive": "2021-09-28T08:00+03:00",
       "RangeEndExclusive": "2021-09-30T24:00+03:00"
+    },
+    {
+      "TimeKey": "received_on",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e03_raw",
+      "RangeStartInclusive": "2021-10-05T08:00+03:00",
+      "RangeEndExclusive": "2021-10-13T08:00+03:00"
+    },
+    {
+      "TimeKey": "received_on",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e04_raw",
+      "RangeStartInclusive": "2021-10-13T08:00+03:00",
+      "RangeEndExclusive": "2021-10-20T08:00+03:00"
+    },
+    {
+      "TimeKey": "received_on",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e05_raw",
+      "RangeStartInclusive": "2021-10-20T08:00+03:00",
+      "RangeEndExclusive": "2021-10-27T08:00+03:00"
+    },
+    {
+      "TimeKey": "received_on",
+      "ShowPipelineKeyToRemapTo": "rqa_elections_s01e06_raw",
+      "RangeStartInclusive": "2021-10-27T08:00+03:00",
+      "RangeEndExclusive": "2021-11-03T08:00+03:00"
     }
   ],
   "SourceKeyRemappings": [
