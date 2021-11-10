@@ -3,7 +3,70 @@
   "Name": "RQA S01E07",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-0758f4fd",
+      "CodeType": "Normal",
+      "DisplayText": "provide encouragement",
+      "NumericValue": 1,
+      "StringValue": "provide_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-97deb286",
+      "CodeType": "Normal",
+      "DisplayText": "has had influence",
+      "NumericValue": 2,
+      "StringValue": "has_had_influence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-00e1a85a",
+      "CodeType": "Normal",
+      "DisplayText": "better programmes",
+      "NumericValue": 3,
+      "StringValue": "better_programmes",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-b458d5a9",
+      "CodeType": "Normal",
+      "DisplayText": "play big roles",
+      "NumericValue": 4,
+      "StringValue": "play_big_roles",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-82c9d907",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 5,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-84220fc8",
+      "CodeType": "Normal",
+      "DisplayText": "it is important",
+      "NumericValue": 6,
+      "StringValue": "it_is_important",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2d502b57",
+      "CodeType": "Normal",
+      "DisplayText": "no influence",
+      "NumericValue": 6,
+      "StringValue": "no_influence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-85ece0fb",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 7,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
