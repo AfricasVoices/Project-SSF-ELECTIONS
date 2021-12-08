@@ -3,7 +3,46 @@
   "Name": "RQA S01E07",
   "Version": "0.0.0.1",
   "Codes": [
-
+    {
+      "CodeID": "code-0758f4fd",
+      "CodeType": "Normal",
+      "DisplayText": "provide encouragement",
+      "NumericValue": 1,
+      "StringValue": "provide_encouragement",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-97deb286",
+      "CodeType": "Normal",
+      "DisplayText": "has had influence",
+      "NumericValue": 2,
+      "StringValue": "has_had_influence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-82c9d907",
+      "CodeType": "Normal",
+      "DisplayText": "awareness creation",
+      "NumericValue": 3,
+      "StringValue": "awareness_creation",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-2d502b57",
+      "CodeType": "Normal",
+      "DisplayText": "no influence",
+      "NumericValue": 4,
+      "StringValue": "no_influence",
+      "VisibleInCoda": true
+    },
+    {
+      "CodeID": "code-85ece0fb",
+      "CodeType": "Normal",
+      "DisplayText": "other theme",
+      "NumericValue": 5,
+      "StringValue": "other_theme",
+      "VisibleInCoda": true
+    },
     {
       "CodeID": "code-NA-f93d3eb7",
       "CodeType": "Control",
